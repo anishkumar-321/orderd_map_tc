@@ -26,8 +26,8 @@ let me explain the above  time complexity in simple terms :
 2.Find function takes 0(logn*minimum(Length1,Length2)) and also [] operator takes 0(logn*minimum(length1,length2)) especially in the map key data type is string.
 3.The explanation for the second step is we know the ordered map internal implementation is red black tree which takes 0(logn) for rebalancing the tree. the find function and [] function
   takes 0(logn) times  to find or insert the element in the red black tree which is map.And Length1,Length2 comes into picture if the map key datatype is string .Here Length1 is the string you need to insert or find in
-   the the red black tree(Map) and Length2 is the red black tree key which is of string type. Here Length1 compares the red black node key that is Length2 by the string comparision in the form of ASCII
-   differenece.Here Length1 and Length2 does not comes into picture if the key datatype is integer or float  in that cases the find and [] time complexity is 0(logn) and not 0(logn*min(length1,length2)).
+  the the red black tree(Map) and Length2 is the red black tree key which is of string type. Here Length1 compares the red black node key that is Length2 by the string comparision in the form of ASCII
+  differenece.Here Length1 and Length2 does not comes into picture if the key datatype is integer or float  in that cases the find and [] time complexity is 0(logn) and not 0(logn*min(length1,length2)).
 4.Now i think you guys got a clear idea about how time complexity is formed....
 5.in Asymptotic analysis we need to remove the constants and lower order terms right!
  tc: 0(n*(klogk+logn*min(length1,length2)) can be written as 0(n*klogk)+(nlogn*min(length1,length2))
