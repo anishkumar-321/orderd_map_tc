@@ -31,7 +31,7 @@ let me explain the above  time complexity in simple terms :
 5.in Asymptotic analysis we need to remove the constants and lower order terms right!
  tc: 0(n*(klogk+logn*min(length1,length2)) can be written as 0(n*klogk)+(nlogn*min(length1,length2))
 Q) which is growing fast 0(n*klogk) or (nlogn*min(length1,length2)?
-A) My answer is 0(nlogn*min(length1,length2)) because consider n=100(number of elements) and k=30 (size of each string)
+A) My answer is 0(nlogn*min(length1,length2)) because consider n=100(number of elements) and k=32 (size of each string)
 firstly lets start with 0(n*klogk) = (100*32 logbase2 32).
   logbase2 32 =5 then (n*klogk)= (100*32*5)= 16000 times.
  where as (n*logn*min(length1,length2)=(100*logbase2 100*min(length1,length2))
