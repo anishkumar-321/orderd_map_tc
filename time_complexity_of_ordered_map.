@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+ ordered_map<string,int>m;
+string key;
+int value;
+int n;
+ cin>>n;
+for(int i=0;i<n;i++){
+  getline(cin,key);
+  cin>>value;
+  sort(key.begin(),key.end());
+ if(m.find(key)==m.end()){
+   m[key]=value;
+  }
+ else{
+  m[key]=m[key];
+  }
+}
+}
+
+Accurate Time Complexity is : 0(n*(klogk+logn*min(length1,lenght2)))
+let me explain the above  time complexity in simple terms :
+1.Firtly there are n elements. At each element you are sorting the string which costs klogk here k is the length of the string. For n elements you are performing the n*klogk times.
+2.Find function takes 0(logn*minimum(Length1,Length2)) and also [] operator takes 0(logn*minimum(length1,length2)) especially in the map key data type is string.
+3.The explanation for the second step is we know the ordered map internal implementation is red black tree which takes 0(logn) for rebalancing the tree. the find function and [] function
+  takes 0(logn) times  to find or insert the element in the red black tree which is map.And Length1,Length2 comes into picture if the map key datatype is string .Here Length1 is the string you need to insert or find in
+   the the red black tree(Map) and Length2 is the red black tree key which is of string type. Here Length1 compares the red black node key that is Length2 by the string comparision in the form of ASCII
+   differenece.Here Length1 and Length2 does not comes into picture if the key datatype is integer or float  in that cases the find and [] time complexity is 0(logn) and not 0(logn*min(length1,length2)).
+4.Now i think you guys got a clear idea about how time complexity is formed....
+5.in Asymptotic analysis we need to remove the constants and lower order terms right!
+ tc: 0(n*(klogk+logn*min(length1,length2)) can be written as 0(n*klogk)+(nlogn*min(length1,length2))
+Q) which is growing fast 0(n*klogk) or (nlogn*min(length1,length2)?
+A) My answer is 0(nlogn*min(length1,length2)) because consider n=100(number of elements) and k=30 (size of each string)
+firstly lets start with 0(n*klogk) = (100*32 logbase2 32).
+  logbase2 32 =5 then (n*klogk)= (100*32*5)= 16000 times.
+ where as (n*logn*min(length1,length2)=(100*logbase2 100*min(length1,length2))
+logbase2 100= 7(approximate)
+  here assume average of each string comparisions length is 30 in worst case i am taking 30.  then(100*7*30) that is 21,000 which is worst worst case i am taking...
+so 0(n*klogk)=16000times and 0(nlogn*min(length1,length2))=21000
+clearly the fast growing term is 0(nlogn*min(length1,length2))
+In asymptotic notation the final time complexity is  rounded to 0(nlogn*min(length1,length2)).
+Space complexity is 0(n*logn*k). k is the length of each string..
+         *********************THANK YOU**************************
+
+
