@@ -1,3 +1,4 @@
+//THE TIME COMPLEXITY OF BELOW PROGRAM AND EXPLANATION IS WRITTEN BELOW....
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
